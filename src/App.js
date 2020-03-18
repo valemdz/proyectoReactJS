@@ -1,73 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-// function Hello( props ){
-// return <h2>{props.titulo}</h2>
-// }
+class Contador extends Component{
 
-// const Hello = (props) => <h2>{props.titulo}</h2>;
+    constructor( props ){
+        super( props );
+        this.state = { contador: this.props.contadorInicial }
+        setInterval( () =>  this.setState ( { contador :   this.state.contador + 1 } )  , 1000);
+    }
 
-class Hello extends Component{
-    render(){
-        return  <h2>{ this.props.titulo }</h2>; 
+    render(){        
+        return <ContadorNumero  numero={this.state.contador} />;     
     }
 }
 
-class TituloEspecial extends Component{
-    render(){
-    return <h5>{ this.props.texto }</h5>
-    }
+Contador.defaultProps = {
+    contadorInicial : 0
 }
 
-TituloEspecial.defaultProps = {
-    texto:' Default texto en h5'
-}
-
-class Texto extends Component{
+class ContadorNumero extends Component{
     render(){
-
-        const {
-            arrayOfNmbers,
-            isActivated,
-            number,
-            multiply,
-            objectWithInfo,
-            texto,
-            titulo
-        } = this.props;
-
-        const textoSegunBoolean = isActivated? 'Verdadero!!!':'Falso';
-        const mappedNumbers = arrayOfNmbers.map( multiply );
-
-        return <div> 
-                {titulo}
-               <p>{ texto }</p>
-               <p>{ number }</p>
-               <p>{ textoSegunBoolean }</p> 
-               <p>{ mappedNumbers.join(', ') }</p>
-               <p>{ JSON.stringify( objectWithInfo ) } </p>
-               </div>
+        return <span>{ this.props.numero }</span>
     }
 }
 
 function App() {
     return ( <div className = "App" >
-            <header className = "App-header" >
-
-                
-                <TituloEspecial texto='ya tiene valor el h5' />
-
-                <Texto 
-                    arrayOfNmbers={[2,4,8]}
-                    isActivated
-                    number={2}
-                    multiply={ ( n ) => n*-1}
-                    objectWithInfo= {{nombre: 'Valeria', apellido: 'Torres', 'edad':41 }}
-                    texto='Deberias aprender ReactJS' 
-                    titulo={ <h1>Este es el titulo en h1 </h1>}		 />
-
-            </header> 
+           <p>Primer componente con state</p>
+           <Contador contadorInicial={41} />
 		</div>
     );
 }
