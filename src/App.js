@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
-//import Condicional from './sections/conditional';
+import List from './sections/lists';
 
 
 
 class  App extends Component {
 
-  render(){
-
-     const numbers  = [1,1,3,4,5];
+  render(){    
 
      return ( <div className = "App" >               
                         
-            <h4>Trabajando con listas</h4>
-            { numbers.map( ( nu, index ) =>  <p key={index} >Soy el numero { nu }</p>  ) }
+            <h4>Trabajando con listas  de objetos </h4>
+            <List/>
       
 		</div>
     );
