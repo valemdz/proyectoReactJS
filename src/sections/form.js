@@ -3,16 +3,20 @@ import React, {Component} from 'react';
 
 class Form extends Component{
 
-    handleFormClick = ( e )=>{
+    handleOnSubmit = ( e )=>{
         e.preventDefault();
         const name = this.inputElement.value;
         const twitter = document.getElementById('twitter').value;
         console.log( name,twitter);
     } 
 
+    handleOnChange( e ){
+        console.log(e.target.checked);
+    }
+
     render(){
-        return <form >
-                  <label htmlFor='name' >Nombre:</label>  
+        return <form  onSubmit={ this.handleOnSubmit }>
+                  <label htmlFor='name' >Name:</label>  
                   <input 
                     id = 'name'
                     name = 'userName'
@@ -23,9 +27,11 @@ class Form extends Component{
                   <input 
                     id='twitter'
                     name='userAccount'
-                    placeholder = 'Ingrese su cuenta de Twiter'                    
+                    placeholder = 'Ingrese su cuenta de Twiter!!!!'                    
                   />
-                  <button onClick={this.handleFormClick} >Enviar</button>
+                  <label>Acepto</label>
+                  <input type='checkbox' onChange={ this.handleOnChange} />
+                  <button>Enviar</button>
                </form> 
     }
 
