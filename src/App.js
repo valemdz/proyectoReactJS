@@ -11,8 +11,7 @@ class  App extends Component {
 
         <h4>Practica con Props Children  </h4>
         
-        <Article 
-              autor='Valeria'
+        <Article               
               date = { new Date().toDateString() } 
               titulo='Atencion Corona Virus'>              
               Parece ser que el <strong>Corona Virus </strong>
