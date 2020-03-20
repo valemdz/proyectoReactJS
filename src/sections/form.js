@@ -3,15 +3,23 @@ import React, {Component} from 'react';
 
 class Form extends Component{
 
+    constructor(){
+      super();
+      this.state = {
+        inputName:'',
+        inputTwitter:'@',
+        inputTerminos:true 
+      }
+    }
+
     handleOnSubmit = ( e )=>{
         e.preventDefault();
-        const name = this.inputElement.value;
-        const twitter = document.getElementById('twitter').value;
-        console.log( name,twitter);
+        
+        console.log( this.state.inputName, this.state.inputTwitter, this.state.inputTerminos );
     } 
 
-    handleOnChange( e ){
-        console.log(e.target.checked);
+    handleOnChange = ( e ) => {
+      this.setState( { inputTerminos : e.target.checked } )
     }
 
     render(){
@@ -21,16 +29,22 @@ class Form extends Component{
                     id = 'name'
                     name = 'userName'
                     placeholder = 'Ingrese el Nombre'
-                    ref = { inputElement => this.inputElement = inputElement}
+                    value={ this.state.inputName }
+                    onChange={ e => this.setState( { inputName : e.target.value } ) }
                   />
                   <label>Twiter:</label>
                   <input 
                     id='twitter'
                     name='userAccount'
-                    placeholder = 'Ingrese su cuenta de Twiter!!!!'                    
+                    placeholder = 'Ingrese su cuenta de Twiter!!!!'    
+                    value={ this.state.inputTwitter }   
+                    onChange={ e => this.setState( { inputTwitter : e.target.value } ) }             
                   />
                   <label>Acepto</label>
-                  <input type='checkbox' onChange={ this.handleOnChange} />
+                  <input type='checkbox' 
+                    onChange={ this.handleOnChange}                    
+                    checked = { this.state.inputTerminos } 
+                     />
                   <button>Enviar</button>
                </form> 
     }
