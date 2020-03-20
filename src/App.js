@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
-//import Condicional from './sections/conditional';
-import Form from './sections/form';
+import Box from './sections/box';
 
 
 class  App extends Component {
@@ -11,8 +9,13 @@ class  App extends Component {
 
       return ( <div className = "App"   >
 
-        <h4>Practica con Formularios </h4>
-        <Form />
+        <h4>Practica con Props Children  </h4>
+        <Box>
+          Aqui va el primer mensaje!!!
+        </Box>  
+        <Box>
+          Aqui va el SEGUNDO mensaje!!!
+        </Box>  
        
             
       </div>
