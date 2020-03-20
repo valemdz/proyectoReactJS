@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 class LoginButton extends Component{
     render(){
-        return <button>Iniciar Sesion</button>
+        return <button >Iniciar Sesion</button>
     }
 }
 
