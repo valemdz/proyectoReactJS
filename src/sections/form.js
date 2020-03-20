@@ -12,7 +12,7 @@ class Form extends Component{
 
     render(){
         return <form >
-                  <label>Nombre:</label>  
+                  <label htmlFor='name' >Nombre:</label>  
                   <input 
                     id = 'name'
                     name = 'userName'
