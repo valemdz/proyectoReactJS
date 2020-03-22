@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ComponentWillMount from './sections/componentWillMount';
+import Render  from './sections/render';
 
 class  App extends Component {
 
@@ -7,8 +7,8 @@ class  App extends Component {
   render(){    
 
      return ( <div className = "App" >                                       
-                  <h4> Fase Montaje Component Will Mount </h4>          
-                  <ComponentWillMount/>  
+                  <h1> Fase Montaje Component Render  </h1>          
+                  <Render/>  
               </div>
     );
 
