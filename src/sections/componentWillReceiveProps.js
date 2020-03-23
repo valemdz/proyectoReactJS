@@ -19,11 +19,17 @@ class AnimalImage extends Component {
     state = { src:  ANIMAL_IMAGES[this.props.animal] };
 
     componentWillReceiveProps( nextProps ){
-        console.log( ' componentWillReceiveProps' );
+        console.log( '1 componentWillReceiveProps' );
         console.log( nextProps );
         this.setState( { src :nextProps.animal });
     }
     
+    shouldComponentUpdate( nextProps ){
+        console.log( '2 shouldComponentUpdate' );
+        console.log( 'anterior', this.props.animal );
+        console.log( 'nuevo', nextProps.animal );
+        return this.props.animal !== nextProps.animal;
+    }
     
     render(){
         console.log('render');
