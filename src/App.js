@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import Render  from './sections/render';
+import ComponentWillReceiveProps  from './sections/componentWillReceiveProps';
 
 class  App extends Component {
 
  
   render(){    
 
-     return ( <div className = "App" >                                       
-                  <h1> Fase Montaje Component Render  </h1>          
-                  <Render/>  
+     return ( <div className = "App" >                                                         
+                  <ComponentWillReceiveProps/>  
               </div>
     );
 
