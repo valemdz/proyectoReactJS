@@ -42,10 +42,9 @@ class FetchExample extends Component{
 
 
     render(){
-        return   <div>
-               <h4> Ejemplo de Fetch Api</h4>
-                    { this._renderCurrencies() }
-            </div>
+        return <div key={currency} >
+        <span > 1 BTI es {  bpi[ currency ].rate } {currency}</span>
+    </div>
     }
 
 }

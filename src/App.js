@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ComponentWillReceiveProps  from './sections/componentWillReceiveProps';
+import BitCoinContainer  from './container-content';
 
 class  App extends Component {
 
@@ -7,7 +7,7 @@ class  App extends Component {
   render(){    
 
      return ( <div className = "App" >                                                         
-                  <ComponentWillReceiveProps/>  
+                  <BitCoinContainer/>  
               </div>
     );
 
